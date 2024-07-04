@@ -1,0 +1,21 @@
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+from flask_bcrypt import Bcrypt
+from flask_session import Session
+from flask_cors import CORS
+from datetime import timedelta
+
+app = Flask(__name__)
+CORS(app, supports_credentials=True)
+app.config['SECRET_KEY'] = 'my_secret'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
+app.config['SESSION_TYPE'] = 'filesystem'
+
+db = SQLAlchemy(app)
+bcrypt = Bcrypt(app)
+sess = Session(app)
+
+from api import *
+
+if __name__ == '__main__':
+    app.run(debug=True)
