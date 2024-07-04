@@ -15,6 +15,11 @@ db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 sess = Session(app)
 
+
+@app.route('/', methods=['GET'])
+def Home():
+    return "Hello world"
+
 from api import *
 
 if __name__ == '__main__':
