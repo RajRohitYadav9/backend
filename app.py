@@ -6,7 +6,7 @@ from flask_cors import CORS
 from datetime import timedelta
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://zealous-flower-02a4eb21e.5.azurestaticapps.net"}})
+CORS(app, supports_credentials=True, resources={r"/*": {"origins": "https://agreeable-ground-084082a1e.5.azurestaticapps.net/"}})
 app.config['SECRET_KEY'] = 'my_secret'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
 app.config['SESSION_TYPE'] = 'filesystem'
